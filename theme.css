@@ -577,7 +577,7 @@ mark {
 }
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-error-background);"]
-> div[contenteditable="true"]::before {
+> div:first-child::before {
     content: url("src/error-icon.svg");
     padding-right: 0.15em;
 }
@@ -590,7 +590,7 @@ mark {
 
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-warning-background);"]
-> div[contenteditable="true"]::before {
+> div:first-child::before {
     content: url("src/warning-icon.svg") " ";
     padding-right: 0.15em;
 }
@@ -603,7 +603,7 @@ mark {
 
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-info-background);"]
-> div[contenteditable="true"]::before {
+> div:first-child::before {
     content: url("src/info-icon.svg") " ";
     padding-right: 0.15em;
 }
@@ -616,7 +616,7 @@ mark {
 
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-success-background);"]
-> div[contenteditable="true"]::before {
+> div:first-child::before {
     content: url("src/success-icon.svg");
     padding-right: 0.15em;
 }
