@@ -576,11 +576,10 @@ mark {
     background-color: var(--b3-card-error-background) !important;
 }
 .protyle-wysiwyg
-.p[style*="background-color: var(--b3-card-error-background);"]::before {
+.p[style*="background-color: var(--b3-card-error-background);"]
+> div[contenteditable="true"]::before {
     content: url("src/error-icon.svg");
-    float: left;
     padding-right: 0.15em;
-    height: 1em;
 }
 
 .protyle-wysiwyg
@@ -590,11 +589,10 @@ mark {
 }
 
 .protyle-wysiwyg
-.p[style*="background-color: var(--b3-card-warning-background);"]::before {
+.p[style*="background-color: var(--b3-card-warning-background);"]
+> div[contenteditable="true"]::before {
     content: url("src/warning-icon.svg") " ";
-    float: left;
     padding-right: 0.15em;
-    height: 1em;
 }
 
 .protyle-wysiwyg
@@ -604,11 +602,10 @@ mark {
 }
 
 .protyle-wysiwyg
-.p[style*="background-color: var(--b3-card-info-background);"]::before {
+.p[style*="background-color: var(--b3-card-info-background);"]
+> div[contenteditable="true"]::before {
     content: url("src/info-icon.svg") " ";
-    float: left;
     padding-right: 0.15em;
-    height: 1em;
 }
 
 .protyle-wysiwyg
@@ -618,11 +615,10 @@ mark {
 }
 
 .protyle-wysiwyg
-.p[style*="background-color: var(--b3-card-success-background);"]::before {
+.p[style*="background-color: var(--b3-card-success-background);"]
+> div[contenteditable="true"]::before {
     content: url("src/success-icon.svg");
-    float: left;
     padding-right: 0.15em;
-    height: 1em;
 }
 
 /* ----------------------------------------------引用 END---------------------------------------------- */
