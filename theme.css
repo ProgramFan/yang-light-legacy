@@ -256,7 +256,7 @@
 
 /* ————————————————————设置界面字体大小，不包括正文，正文字体大小在编辑器那里选择———————————————————— */
 body {
-    font-size: 15.5px;
+    font-size: 16px;
 }
 
 /* ----------------------------------------------------------设置主要背景色------------------------------------------------------- */
@@ -478,12 +478,12 @@ mark {
 }
 
 /* --------------------------------下划线样式--------------------------- */
-/* .b3-typography u,
+.b3-typography u,
 .protyle-wysiwyg u {
     text-decoration: none;
-    border-bottom: 2px solid gray;
+    border-bottom: 1px solid gray;
     padding-bottom: 1px;
-} */
+}
 
 /* ----------------------------------------------引用---------------------------------------------- */
 
@@ -514,6 +514,7 @@ mark {
     background-image: url('src/blockquote.svg');
     background-size: 18px 18px;
     background-repeat: no-repeat;
+    background-position: top 2px left 2px;
     background-color: var(--b3-theme-background2) !important;
     position: 10px 10px;
     line-height: 6px !important;
@@ -528,6 +529,7 @@ mark {
     background-image: url('src/error-icon.svg');
     background-size: 18px 18px;
     background-repeat: no-repeat;
+    background-position: top 2px left 2px;
     /* border-top: 3px solid #d83931; */
     border-top: 3px solid var(--b3-font-color1);
     background-color: var(--b3-card-error-background);
@@ -538,6 +540,7 @@ mark {
     background-image: url('src/warning-icon.svg');
     background-size: 18px 18px;
     background-repeat: no-repeat;
+    background-position: top 2px left 2px;
     /* border-top: 3px solid #ffa500; */
     border-top: 3px solid var(--b3-font-color2);
     background-color: var(--b3-card-warning-background);
@@ -548,6 +551,7 @@ mark {
     background-image: url('src/info-icon.svg');
     background-size: 18px 18px;
     background-repeat: no-repeat;
+    background-position: top 2px left 2px;
     border-top: 3px solid var(--b3-font-color6);
     /* border-top: 3px solid #4863a0; */
     background-color: var(--b3-card-info-background);
@@ -558,6 +562,7 @@ mark {
     background-image: url('src/success-icon.svg');
     background-size: 18px 18px;
     background-repeat: no-repeat;
+    background-position: top 2px left 2px;
     border-top: 3px solid var(--b3-font-color4);
     /* border-top: 3px solid #2ea121; */
     background-color: var(--b3-card-success-background);
@@ -572,8 +577,9 @@ mark {
 }
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-error-background);"]::before {
-    content: url("src/error-icon.svg") " ";
+    content: url("src/error-icon.svg");
     float: left;
+    padding-right: 0.15em;
     height: 1em;
 }
 
@@ -587,6 +593,7 @@ mark {
 .p[style*="background-color: var(--b3-card-warning-background);"]::before {
     content: url("src/warning-icon.svg") " ";
     float: left;
+    padding-right: 0.15em;
     height: 1em;
 }
 
@@ -600,6 +607,7 @@ mark {
 .p[style*="background-color: var(--b3-card-info-background);"]::before {
     content: url("src/info-icon.svg") " ";
     float: left;
+    padding-right: 0.15em;
     height: 1em;
 }
 
@@ -613,6 +621,7 @@ mark {
 .p[style*="background-color: var(--b3-card-success-background);"]::before {
     content: url("src/success-icon.svg");
     float: left;
+    padding-right: 0.15em;
     height: 1em;
 }
 
