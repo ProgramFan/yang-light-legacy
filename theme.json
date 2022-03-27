@@ -1,0 +1,9 @@
+{
+  "name": "Yang Light",
+  "author": "programfan",
+  "url": "https://github.com/programfan/yang-light",
+  "version": "0.1.0",
+  "modes": [
+    "light"
+  ]
+}
