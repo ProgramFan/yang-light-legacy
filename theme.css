@@ -495,7 +495,6 @@ mark {
 .b3-typography blockquote {
     min-height: 40px;
     border-bottom: var(--b3-border-wider);
-    color: gray;
     border-left: none !important;
     padding: 5px 20px;
     border-radius: var(--b3-border-radius-noraml);
@@ -520,6 +519,7 @@ mark {
     line-height: 6px !important;
     border-top: 3px solid #d83931;
     border-left: none !important;
+    color: gray;
 }
 
 /* 卡片引用样式 */
