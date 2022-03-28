@@ -1139,8 +1139,9 @@ code.hljs {
     border: var(--b3-border-normal);
     border-collapse: collapse !important;
     border-radius: var(--b3-border-radius-none) !important;
-    background-color: var(--b3-font-background8);
+    background-color: var(--b3-theme-background2);
     box-sizing: border-box;
+    color: var(--b3-font-color-gray);
 }
 
 /* ——————————————————————设置文字最小宽度，标签过多时才能看清楚文字—————————————————————— */
@@ -1155,6 +1156,7 @@ code.hljs {
 /* ——————————————————————————选中的标签页—————————————————————— */
 .layout-tab-bar .item--focus {
     background-color: white !important;
+    color: var(--b3-font-color);
     border: var(--b3-border-normal);
     border-top: 0.05em solid transparent !important;
 }
