@@ -1,6 +1,7 @@
 # 思源主题：Yang Light
 
-本主题以 Zhang Light 主题为模板进行定制。主要的定制包括：
+本主题以 [Zhang Light 主题](https://github.com/UserZYF/zhang-light) 为模板进行定
+制。主要的定制包括：
 
 1. 新增了对四种卡片的特殊设置（灵感来源于 Tsundoku Light）
 2. 重构了标题自动编号: 章编号从第二个H1开始，第一个H1作为文档标题
@@ -11,7 +12,7 @@
 
 ## 🙏 感谢列表
 
-- 感谢 Zhang Light 的作者和贡献者
+- 感谢 Zhang Light 的作者和贡献者 https://github.com/UserZYF/zhang-light
 
 ## 📌 注意事项
 
