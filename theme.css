@@ -92,6 +92,10 @@
     --b3-card-warning-background: #fee6ac;
     --b3-card-info-background: #cfddfe;
     --b3-card-success-background: #ccf2c8;
+    --b3-card-error-border: #d83931;
+    --b3-card-warning-border: #de7802;
+    --b3-card-info-border: #245dbd;
+    --b3-card-success-border: #2ea121;
 
     --b3-card-darker-red: #c81a31;
     --b3-card-darker-yellow: #ec6f05;
@@ -487,9 +491,11 @@ mark {
 
 /* ----------------------------------------------引用---------------------------------------------- */
 
-/* ——————————————————————————设置引用格式———————————————————————————— */
+/* ------------------------------- 引用样式 -------------------------------- */
 
-/* 基础引用样式 */
+/*
+ * 公共基础样式
+ */
 
 .protyle-wysiwyg [data-node-id].bq,
 .b3-typography blockquote {
@@ -501,12 +507,9 @@ mark {
     margin: 4px;
 }
 
-/* 修复无序列表中因为before伪元素造成的左边线条位置错乱*/
-.protyle-wysiwyg [data-node-id].li>[data-node-id].bq:before {
-    left: -18px !important;
-}
-
-/* 无背景色的引用: 引用图标、主题背景 */
+/*
+ * 非卡片样式
+ */
 
 .protyle-wysiwyg [data-node-id].bq:not([style*="background-color"]),
 .b3-typography blockquote:not([style*="background-color"]) {
@@ -522,7 +525,12 @@ mark {
     color: gray;
 }
 
-/* 卡片引用样式 */
+/*
+ * 引用卡片样式
+ *
+ * 引用卡片在基础的引用样式的基础上，对 error、warning、info 和 success 四种卡片
+ * 定制了图标和上边框。边框颜色已由变量 `--b3-card-<foo>-border`定义。
+ */
 
 .protyle-wysiwyg
 .bq[style*="background-color: var(--b3-card-error-background);"] {
@@ -530,8 +538,7 @@ mark {
     background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: top 2px left 2px;
-    /* border-top: 3px solid #d83931; */
-    border-top: 3px solid var(--b3-font-color1);
+    border-top: 3px solid var(--b3-card-error-border);
     background-color: var(--b3-card-error-background);
 }
 
@@ -541,8 +548,7 @@ mark {
     background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: top 2px left 2px;
-    /* border-top: 3px solid #ffa500; */
-    border-top: 3px solid var(--b3-font-color2);
+    border-top: 3px solid var(--b3-card-warning-border);
     background-color: var(--b3-card-warning-background);
 }
 
@@ -552,8 +558,7 @@ mark {
     background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: top 2px left 2px;
-    border-top: 3px solid var(--b3-font-color6);
-    /* border-top: 3px solid #4863a0; */
+    border-top: 3px solid var(--b3-card-info-border);
     background-color: var(--b3-card-info-background);
 }
 
@@ -563,17 +568,19 @@ mark {
     background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: top 2px left 2px;
-    border-top: 3px solid var(--b3-font-color4);
-    /* border-top: 3px solid #2ea121; */
+    border-top: 3px solid var(--b3-card-success-border);
     background-color: var(--b3-card-success-background);
 }
 
-/* 卡片段落样式 */
+/*
+ * 段落卡片样式
+ *
+ * 段落卡片的样式包括深色边框、图标、修复左边线。其配色和图标与引用卡片保持一致。
+ */
 
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-error-background);"] {
-    border: 1px solid var(--b3-font-color1) !important;
-    background-color: var(--b3-card-error-background) !important;
+    border: 1px solid var(--b3-card-error-border) !important;
 }
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-error-background);"]
@@ -581,49 +588,59 @@ mark {
     content: url("src/error-icon.svg");
     padding-right: 0.15em;
 }
+.protyle-wysiwyg [data-node-id].li
+>.p[style*="background-color: var(--b3-card-error-background);"]::before {
+    left: -19px !important; /* 左边框修正 */
+}
 
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-warning-background);"] {
-    border: 1px solid var(--b3-font-color2) !important;
-    background-color: var(--b3-card-warning-background) !important;
+    border: 1px solid var(--b3-card-warning-border) !important;
 }
-
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-warning-background);"]
 > div:first-child::before {
     content: url("src/warning-icon.svg") " ";
     padding-right: 0.15em;
 }
+.protyle-wysiwyg [data-node-id].li
+>.p[style*="background-color: var(--b3-card-warning-background);"]::before {
+    left: -19px !important; /* 左边框修正 */
+}
 
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-info-background);"] {
-    border: 1px solid var(--b3-font-color6) !important;
-    background-color: var(--b3-card-info-background);
+    border: 1px solid var(--b3-card-info-border) !important;
 }
-
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-info-background);"]
 > div:first-child::before {
     content: url("src/info-icon.svg") " ";
     padding-right: 0.15em;
 }
+.protyle-wysiwyg [data-node-id].li
+>.p[style*="background-color: var(--b3-card-info-background);"]::before {
+    left: -19px !important; /* 左边框修正 */
+}
 
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-success-background);"] {
-    border: 1px solid var(--b3-font-color4) !important;
-    background-color: var(--b3-card-success-background);
+    border: 1px solid var(--b3-card-success-border) !important;
 }
-
 .protyle-wysiwyg
 .p[style*="background-color: var(--b3-card-success-background);"]
-> div:first-child::before {
+>div:first-child::before {
     content: url("src/success-icon.svg");
     padding-right: 0.15em;
 }
+.protyle-wysiwyg [data-node-id].li
+>.p[style*="background-color: var(--b3-card-success-background);"]::before {
+    left: -19px !important; /* 左边框修正 */
+}
 
-/* ----------------------------------------------引用 END---------------------------------------------- */
+/* ------------------------------- 引用 END -------------------------------- */
 
-/* ------------------------------------------------块引用/引用块------------------------------------------------- */
+/* -----------------------------块引用/引用块------------------------------- */
 /* 设置引用块格式 */
 .protyle-wysiwyg [data-node-id] span[data-type='block-ref'] {
     /* color: #202124; */
