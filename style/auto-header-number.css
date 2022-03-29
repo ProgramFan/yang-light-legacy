@@ -1,0 +1,55 @@
+/*
+ * 设置 counter 及其递增规则
+ */
+
+/* 注意：第一个一级标题是文档标题，所以总是从第二个一级标题以后对章进行编号 */
+.protyle-wysiwyg .h1:nth-last-child(n+1):first-child {
+  counter-reset: chapter;
+}
+.protyle-wysiwyg .h1:nth-last-child(n+1):first-child ~ .h1 {
+  counter-increment: chapter;
+}
+.protyle-wysiwyg .h1 {
+  counter-reset: s1;
+}
+.protyle-wysiwyg .h2 {
+  counter-reset: s2;
+  counter-increment: s1;
+}
+.protyle-wysiwyg .h3 {
+  counter-reset: s3;
+  counter-increment: s2;
+}
+.protyle-wysiwyg .h4 {
+  counter-increment: s3;
+}
+
+/*
+ * 设置章节标题文本
+ */
+
+/* 注意：第一个一级标题是文档标题，所以总是从第二个一级标题以后对章进行编号 */
+.protyle-wysiwyg .h1:nth-last-child(n+1):first-child ~
+.h1 >div:first-child::before {
+  content: "第" counter(chapter, cjk-ideographic) "章 ";
+  padding-right: 14px;
+  font-weight: bold;
+}
+
+.protyle-wysiwyg .h2>div:first-child::before {
+  content: "§" counter(s1) " ";
+  padding-right: 8px;
+  font-weight:bold;
+}
+
+.protyle-wysiwyg .h3>div:first-child::before {
+  content: counter(s1) "." counter(s2) " ";
+  padding-right: 8px;
+  font-weight:bold;
+}
+
+.protyle-wysiwyg .h4>div:first-child::before {
+  content: counter(s1) "." counter(s2) "." counter(s3) " ";
+  padding-right: 8px;
+  font-weight:bold;
+}
