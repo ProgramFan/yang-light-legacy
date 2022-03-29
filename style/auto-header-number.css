@@ -53,3 +53,9 @@
   padding-right: 8px;
   font-weight:bold;
 }
+
+/* ——————————消除h1-h6标题中含有引用时导致计数出现自动编号的影响—————————— */
+.protyle-attr::before,
+.protyle-attr--refcount.popover__block::before {
+    display: none;
+}
