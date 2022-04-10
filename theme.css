@@ -1176,6 +1176,7 @@ code.hljs {
     color: var(--b3-font-color);
     border: var(--b3-border-normal);
     border-top: 0.05em solid transparent !important;
+    box-shadow: none !important;
 }
 
 /* ————————————————————————标签页后面的背景—————————————————————— */
